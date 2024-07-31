@@ -1,0 +1,244 @@
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grauish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --red: rgb(156, 82, 82);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+}
+
+body {
+    background-color: var(--light-grayish-cyan);
+}
+
+form input {
+    font-size: 24px;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    color: var(--very-dark-cyan);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    margin-bottom: 40px;
+}
+
+button {
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.container {
+    background-color: var(--white);
+    width: 850px;
+    max-width: 850px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px var(--dark-grayish-cyan);
+    display: flex;
+}
+
+.col {
+    width: 50%;
+}
+
+.col-1 {
+    text-align: left;
+    padding-right: 20px;
+}
+
+.col-1 p,
+.col-1 label {
+    display: block;
+    font-size: 14px;
+    color: var(--dark-grayish-cyan);
+    margin-bottom: 10px;
+}
+
+.col-1 input {
+    width: 100%;
+    color: var(--very-dark-cyan);
+    text-align: right;
+    font-size: 24px;
+    appearance: none;
+    -moz-appearance: textfield;
+    padding: 5px 15px;
+    background-color: var(--very-light-grauish-cyan);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.col-1 input:focus,
+#custom-tip.selected {
+    outline: 3px solid var(--strong-cyan);
+}
+
+input#bill {
+    background-image: url('../images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+
+}
+
+input#num-of-people {
+    background-image: url('../images/icon-person.svg');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+
+}
+
+input.error {
+    outline: 3px solid var(--red);
+}
+
+.label_and_error_holder{
+    display: flex;
+    justify-content: space-between;
+}
+
+p.error-msg {
+    text-align: right;
+    color: var(--red);
+}
+
+.col-1 .bill-section,
+.col-1 .tip-section {
+    margin-bottom: 35px;
+}
+
+.btn,
+.tips-holder input {
+    width: 30%;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.btn {
+    color: var(--white);
+    background-color: var(--very-dark-cyan);
+}
+
+.btn:hover {
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.btn.selected {
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+}
+
+.col-2 {
+    background-color: var(--very-dark-cyan);
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.col-2 .tip-amount {
+    margin-bottom: 30px;
+}
+
+.col-2 .tip-amount,
+.col-2 .total-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col-2 .tip-amount .amount-txt,
+.col-2 .total-amount .total-txt {
+    text-align: left;
+}
+
+
+.col-2 h3 {
+    color: var(--white);
+    font-size: 14px;
+}
+
+.col-2 p {
+    color: var(--dark-grayish-cyan);
+    font-size: 12px;
+}
+
+.col-2 h2 {
+    color: var(--strong-cyan);
+    font-size: 35px;
+}
+
+.btn-reset {
+    width: 100%;
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+    text-transform: uppercase;
+}
+
+.btn-reset:hover {
+    background-color: var(--light-grayish-cyan);
+}
+
+.btn-reset.disabled {
+    opacity: 20%;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+
+    main {
+        height: auto;
+    }
+
+    header {
+        margin-top: 30px;
+    }
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    .btn,
+    .tips-holder input {
+        width: 48%;
+    }
+
+    .col-1 .num-of-people-section {
+        margin-bottom: 35px;
+    }
+    
+    .btn-reset{
+        margin-top: 35px;
+    }
+
+}
